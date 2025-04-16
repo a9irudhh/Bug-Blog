@@ -7,7 +7,10 @@ const authRoute = require("./routes/auth");
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin: "https://bug-blog-4amk.vercel.app",
+    credentials: true
+  }));
 const dbUrl = process.env.DB_URL;
 
 mongoose.connect(dbUrl, {
