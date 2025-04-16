@@ -8,7 +8,7 @@ const authRoute = require("./routes/auth");
 const app = express();
 app.use(express.json());
 app.use(cors());
-const dbUrl = "PASTE_YOUR_MONGODB_URL_HERE"
+const dbUrl = process.env.DB_URL;
 
 mongoose.connect(dbUrl, {
     useNewUrlParser: true,
